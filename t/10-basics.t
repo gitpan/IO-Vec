@@ -1,7 +1,7 @@
 #! /perl -T
 use strict;
 use warnings;
-use Test::More tests => 1;
+use Test::More tests => 2;
 use IO::Vec qw/writev readv/;
 
 my @test = ('abc', 'def', "\n");
@@ -13,3 +13,8 @@ writev $out, @test;
 readv $in, @test;
 
 is(@test, @copy, "Input is output");
+
+writev $out, reverse @test;
+readv $in, @copy;
+
+is(@copy, () = reverse(@test), "Second input is output")
