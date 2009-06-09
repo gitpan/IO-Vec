@@ -1,5 +1,11 @@
 Revision history for IO-Vec
 
+0.03    2009-06-09
+        Second attempt at diagnozing Bohrbug
+
+0.02    2009-04-12
+        Attempted bugfix for total Bohrbug
+
 0.01    2009-03-26
         First version, released on an unsuspecting world.
 

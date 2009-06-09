@@ -3,7 +3,7 @@ package IO::Vec;
 use strict;
 use warnings;
 use bytes;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use base qw/Exporter/;
 use Symbol qw/qualify_to_ref/;
@@ -12,7 +12,7 @@ BEGIN {
 	package IO::Vec::Constants;
 	use Carp qw/croak/;
 	local $SIG{__WARN__} = sub { warn $_[0] unless $_[0] =~ /__LONG_MAX__/ };
-	eval { require 'syscall.ph'; 1 } or croak 'Couldn\'t load syscell definitions: $@';
+	eval { require 'syscall.ph'; 1 } or croak "Couldn't load syscall definitions: $@\n";
 }
 
 our @EXPORT_OK = qw/writev readv/;
@@ -39,7 +39,7 @@ IO::Vec - writev and readv in perl
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =head1 SYNOPSIS
 
